@@ -1,0 +1,9 @@
+server:
+  port: 18086
+
+spring:
+  application:
+    name: sentinel-gateway-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848

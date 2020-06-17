@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>cn.dreamchan</groupId>
+    <artifactId>spring-cloud-learn</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-cloud-learn</name>
+    <description>Spring Cloud 学习例子</description>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.1.2.RELEASE</spring-cloud-alibaba.version>
+    </properties>
+
+    <!--依赖版本定义-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>nacos-discovery-provider</module>
+        <module>nacos-discovery-consumer</module>
+        <module>nacos-discovery-consumer-openfeign</module>
+        <module>nacos-discovery-gateway-server</module>
+        <module>nacos-config-client</module>
+
+        <module>sentinel-config-demo</module>
+        <module>sentinel-feign-consumer</module>
+        <module>sentinel-feign-provider</module>
+        <module>sentinel-gateway</module>
+        <module>sentinel-gateway-service</module>
+
+        <module>seata-biz-service</module>
+        <module>seata-order-service</module>
+        <module>seata-pay-service</module>
+    </modules>
+
+</project>

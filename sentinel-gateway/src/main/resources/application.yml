@@ -1,0 +1,30 @@
+server:
+  port: 18084
+
+spring:
+  application:
+    name: sentinel-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        #配置降级策略
+      scg:
+        fallback:
+          mode: response
+          response-status: 426
+          response-body: error request
+    #gateway路由规则
+    gateway:
+      routes:
+        - id: test_route
+          uri: lb://sentinel-gateway-service
+          predicates:
+            - Path=/test/**
+        - id: test1_route
+          uri: lb://sentinel-gateway-service
+          predicates:
+            - Path=/test1/**

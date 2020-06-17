@@ -1,0 +1,24 @@
+server:
+  port: 7010
+
+spring:
+  application:
+    name: sentinel-config-demo
+
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      datasource:
+        ds1:
+          file:
+            file: classpath:flowrule.json
+            data-type: json
+            rule-type: flow
+        ds2:
+          nacos:
+            server-addr: localhost:8848
+            dataId: sentinel-config-demo
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow

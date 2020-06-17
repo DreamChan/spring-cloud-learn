@@ -1,0 +1,6 @@
+server:
+  port: 6010
+
+spring:
+  application:
+    name: biz-service
